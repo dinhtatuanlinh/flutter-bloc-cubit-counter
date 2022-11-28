@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../counter.dart';
 import 'counter_view.dart';
+import '../../injection.dart';
 
 /// {@template counter_page}
 /// A [StatelessWidget] which is responsible for providing a
@@ -15,7 +16,7 @@ class CounterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => CounterCubit(),
+      create: (_) => getIt.get<CounterCubit>(),
       child: CounterView(),
     );
   }
